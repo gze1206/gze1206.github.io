@@ -10,8 +10,8 @@ const ctfConfig = getConfigForKeys([
   'CTF_PERSON_ID',
   'CTF_PROTFOLIO_TYPE_ID'
 ])
-console.log(ctfConfig)
-console.log(process.env)
+// console.log(ctfConfig)
+// console.log(process.env)
 
 const {createClient} = require('./plugins/contentful')
 const cdaClient = createClient(ctfConfig)
@@ -22,11 +22,15 @@ const cmaClient = cmaContentful.createClient({
 
 module.exports = {
   target: 'static',
+  dev: process.env.NODE_ENV !== 'production',
   /*
   ** Headers of the page
   */
   head: {
-    title: 'gze1206.github.io',
+    titleTemplate: (titleChunk) => {
+      const siteTitle = 'gze1206.github.io'
+      return titleChunk ? `${titleChunk} - ${siteTitle}` : siteTitle;
+    },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -105,6 +109,9 @@ module.exports = {
           ]
         })
     }
+  },
+  webpack: {
+    poll: 1000
   },
   /*
   ** Define environment variables being available
