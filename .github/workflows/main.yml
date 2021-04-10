@@ -20,7 +20,14 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      - name: Cache node_modules
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: node-modules
+
       - name: Install Dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
         run: npm install
         
       - name: Create config json file
@@ -32,10 +39,10 @@ jobs:
       - name: Build
         run: npm run generate
 
-      - name: Cache dist directory
+      - name: Cache dist
         uses: actions/cache@v2
         with:
-          path: ~/dist
+          path: dist
           key: build-result
 
   Deploy:
