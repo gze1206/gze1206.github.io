@@ -97,11 +97,8 @@ module.exports = {
         cdaClient.getEntries({
           'content_type': ctfConfig.CTF_BLOG_POST_TYPE_ID
         }),
-        // get the blog post content type
-        cmaClient.getSpace(ctfConfig.CTF_SPACE_ID)
-          .then(space => space.getContentType(ctfConfig.CTF_BLOG_POST_TYPE_ID))
       ])
-        .then(([entries, postType]) => {
+        .then(([entries]) => {
           return [
           // map entries to URLs
             ...entries.items.map(entry => `/posts/${entry.fields.slug}`)
