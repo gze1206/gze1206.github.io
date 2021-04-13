@@ -1,10 +1,10 @@
 <template>
   <v-app dark>
-    <v-app-bar fixed app>
-      <v-btn v-text="title" plain to="/" />
+    <v-app-bar fixed app id="main-appbar">
+      <v-btn v-text="title" plain to="/"></v-btn>
       <v-spacer />
     </v-app-bar>
-    <v-main class="wrapper">
+    <v-main :class="awesome ? 'wrapper' : ''">
       <v-container>
         <nuxt />
       </v-container>
@@ -24,13 +24,18 @@
 export default {
   data () {
     return {
-      title: 'gze1206.github.io'
+      title: 'gze1206.github.io',
+      awesome: false,
     }
   }
 }
 </script>
 
 <style>
+#main-appbar {
+  background-color: rgba(0,0,0,0.6);
+}
+
 .wrapper {
   background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
   background-size: 1800% 1800%;
