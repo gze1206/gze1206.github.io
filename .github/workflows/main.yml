@@ -47,7 +47,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: dist
-          key: load-build-result-${{ hashFiles('package-lock.json') }}
+          key: build-result-${{ hashFiles('package-lock.json') }}
           restore-keys: build-result-
 
       - name: Deploy to Github Pages
