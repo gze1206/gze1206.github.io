@@ -110,6 +110,9 @@ module.exports = {
   webpack: {
     poll: 1000
   },
+  server: {
+	host: '0.0.0.0'
+  },
   /*
   ** Define environment variables being available
   ** in generate and browser context
