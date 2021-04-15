@@ -36,21 +36,18 @@ jobs:
         uses: actions/cache@v2
         with:
           path: dist
-          key: build-result-${{ hashFiles('package-lock.json') }}
+          key: build-result-${{ github.sha }}
 
   Deploy:
     needs: Build
     runs-on: ubuntu-latest
     
     steps:
-      - uses: actions/checkout@v2
-      
       - name: Cache dist
         uses: actions/cache@v2
         with:
           path: dist
-          key: build-result-${{ hashFiles('package-lock.json') }}
-          restore-keys: build-result-
+          key: build-result-${{ github.sha }}
 
       - name: Deploy to Github Pages
         uses: peaceiris/actions-gh-pages@v3
