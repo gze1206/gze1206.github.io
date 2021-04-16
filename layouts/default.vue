@@ -3,6 +3,10 @@
     <v-app-bar fixed app id="main-appbar">
       <v-btn v-text="title" plain to="/"></v-btn>
       <v-spacer />
+      <v-btn plain color="grey"
+        v-for="menu in menus" :key="menu.to"
+        :to="menu.to" v-text="menu.text" exact
+      ></v-btn>
     </v-app-bar>
     <v-main :class="awesome ? 'wrapper' : ''">
       <v-container>
@@ -26,6 +30,9 @@ export default {
     return {
       title: 'gze1206.github.io',
       awesome: false,
+      menus: [
+        { text: 'blog', to: '/posts' }
+      ]
     }
   }
 }

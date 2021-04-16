@@ -111,7 +111,7 @@ module.exports = {
     poll: 1000
   },
   server: {
-	host: '0.0.0.0'
+	  host: '0.0.0.0'
   },
   /*
   ** Define environment variables being available

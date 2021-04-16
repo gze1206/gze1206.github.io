@@ -17,6 +17,8 @@
     "core-js": "^3.9.1",
     "highlight.js": "^10.7.1",
     "marked": "^2.0.1",
+    "moment": "^2.29.1",
+    "moment-timezone": "^0.5.33",
     "nuxt": "^2.15.3"
   },
   "devDependencies": {
