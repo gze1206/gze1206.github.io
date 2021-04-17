@@ -36,7 +36,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: dist
-          key: build-result-${{ github.sha }}
+          key: build-result-${{ github.run_number }}
 
   Deploy:
     needs: Build
@@ -47,7 +47,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: dist
-          key: build-result-${{ github.sha }}
+          key: build-result-${{ github.run_number }}
 
       - name: Deploy to Github Pages
         uses: peaceiris/actions-gh-pages@v3
