@@ -1,5 +1,5 @@
 <template>
-  <div style="height: 3000px!important;">
+  <div class="noselect" style="height: 3000px!important;">
     <v-parallax dark src="/img/hero1.jpg" id="main-hero" height="400">
       <v-row align="center" justify="center">
         <v-col cols="12" class="text-center">

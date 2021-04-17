@@ -1,6 +1,6 @@
 <template>
   <v-app dark>
-    <v-app-bar fixed app id="main-appbar">
+    <v-app-bar fixed app class="noselect" id="main-appbar">
       <v-btn v-text="title" plain to="/"></v-btn>
       <v-spacer />
       <v-btn plain color="grey"
