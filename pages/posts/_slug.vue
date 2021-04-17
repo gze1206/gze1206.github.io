@@ -6,8 +6,8 @@
           <v-btn plain icon @click="moveBack"><v-icon>arrow_back</v-icon></v-btn>
         </v-card-actions>
         <v-card-title>{{ title }}</v-card-title>
-        <v-card-subtitle class="post-date">Written at {{ createdAt | formatDate }}</v-card-subtitle>
-        <v-card-subtitle class="post-date">Updated at {{ updatedAt | formatDate }}</v-card-subtitle>
+        <v-card-subtitle v-if="createdAt" class="post-date">Written at {{ createdAt | formatDate }}</v-card-subtitle>
+        <v-card-subtitle v-if="updatedAt" class="post-date">Updated at {{ updatedAt | formatDate }}</v-card-subtitle>
       </v-card>
     </v-row>
     <v-row>
