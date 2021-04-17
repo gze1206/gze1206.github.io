@@ -1,7 +1,7 @@
 <template>
   <v-app dark>
     <v-app-bar fixed app class="noselect" id="main-appbar">
-      <v-btn v-text="title" plain to="/"></v-btn>
+      <v-btn v-text="title" plain outlined to="/"></v-btn>
       <v-spacer />
       <v-btn plain color="grey"
         v-for="menu in menus" :key="menu.to"
