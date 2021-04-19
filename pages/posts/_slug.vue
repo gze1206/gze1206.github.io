@@ -1,18 +1,24 @@
 <template>
   <v-container fluid>
     <v-row>
-      <v-card outlined class="full-width pb-4">
+      <v-card outlined class="full-width">
         <v-card-actions>
           <v-btn plain icon @click="moveBack"><v-icon>arrow_back</v-icon></v-btn>
         </v-card-actions>
         <v-card-title>{{ title }}</v-card-title>
         <v-card-subtitle v-if="createdAt" class="post-date">Written at {{ createdAt | formatDate }}</v-card-subtitle>
         <v-card-subtitle v-if="updatedAt" class="post-date">Updated at {{ updatedAt | formatDate }}</v-card-subtitle>
-      </v-card>
-    </v-row>
-    <v-row>
-      <v-card outlined elevation="0" class="full-width">
+        <v-divider class="mt-4"/>
         <div class="ma-4" v-html="compiled" />
+        <div v-if="tags">
+          <v-divider/>
+          <v-card-actions>
+            <v-chip v-for="tag in tags" :key="tag">
+                <v-icon left>label</v-icon>
+                {{ tag }}
+            </v-chip>
+          </v-card-actions>
+        </div>
       </v-card>
     </v-row>
   </v-container>
@@ -61,6 +67,9 @@ export default {
     title: function () {
       return this.entry?.fields.title ?? 'AAAA'
     },
+    tags: function () {
+      return this.entry?.fields.tags
+    },
     createdAt: function () {
       return this.entry?.sys.createdAt;
     },
@@ -77,10 +86,6 @@ export default {
 </script>
 
 <style scoped>
-.full-width {
-  width: 100%;
-}
-
 .post-date {
   margin-top: 0;
   margin-bottom: 0;
