@@ -3,9 +3,9 @@
     <v-app-bar fixed app class="noselect" id="main-appbar">
       <v-btn v-text="title" plain outlined to="/"></v-btn>
       <v-spacer />
-      <v-btn plain color="grey"
+      <v-btn plain class="route-btn" active-class="active-route"
         v-for="menu in menus" :key="menu.to"
-        :to="menu.to" v-text="menu.text" exact
+        :to="menu.to" v-text="menu.text" :exact="menu.exact"
       ></v-btn>
     </v-app-bar>
     <v-main :class="awesome ? 'wrapper' : ''">
@@ -31,16 +31,25 @@ export default {
       title: 'gze1206.github.io',
       awesome: false,
       menus: [
-        { text: 'blog', to: '/posts' }
+        { text: 'tags', to: '/tags', exact: false },
+        { text: 'blog', to: '/posts', exact: true },
       ]
     }
   }
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 #main-appbar {
   background-color: rgba(0,0,0,0.6);
+}
+
+.route-btn {
+  color: grey;
+
+  &.active-route {
+    color: white;
+  }
 }
 
 .wrapper {

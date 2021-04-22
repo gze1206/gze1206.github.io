@@ -13,7 +13,7 @@
         <div v-if="tags">
           <v-divider/>
           <v-card-actions>
-            <v-chip v-for="tag in tags" :key="tag">
+            <v-chip v-for="tag in tags" :key="tag" class="mr-2" @click="viewTaggedPosts(tag)">
                 <v-icon left>label</v-icon>
                 {{ tag }}
             </v-chip>
@@ -80,6 +80,9 @@ export default {
   methods: {
     moveBack: function () {
       this.$router.go(-1)
+    },
+    viewTaggedPosts: function (tag) {
+      this.$router.push(encodeURI(`/tags/${tag}`))
     }
   }
 }

@@ -1,10 +1,14 @@
 <template>
   <v-container fluid class="d-flex flex-wrap noselect">
-    <v-card 
-      v-for="entity in entries"
-      :key="entity.sys.id"
+    <v-chip
+      v-for="tag in tags"
+      :key="tag"
       class="mr-5 mb-3"
-    />
+      @click="viewTaggedPosts(tag)"
+    >
+      <v-icon left>label</v-icon>
+      {{ tag }}
+    </v-chip>
   </v-container>
 </template>
 
@@ -22,7 +26,16 @@ export default {
     });
 
     return {
-      entries: res.items
+      tags: [
+        ...new Set([
+          ...res.items.flatMap(iter => iter.fields.tags)
+        ])
+      ].filter(iter => iter)
+    }
+  },
+  methods: {
+    viewTaggedPosts: function (tag) {
+      this.$router.push(encodeURI(`/tags/${tag}`))
     }
   }
 }
