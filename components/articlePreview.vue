@@ -37,14 +37,6 @@ export default {
     updatedAt: function () {
       return this.entity?.sys.updatedAt;
     },
-  },
-  methods: {
-    viewPost: function (slug) {
-      this.$router.push(`/posts/${slug}`);
-    },
-    viewTaggedPosts: function (tag) {
-      this.$router.push(encodeURI(`/tags/${tag}`));
-    },
-  },
+  }
 };
 </script>

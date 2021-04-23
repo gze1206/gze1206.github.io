@@ -1,10 +1,10 @@
 <template>
-  <v-container fluid class="d-flex flex-wrap noselect">
+  <v-container fluid class="d-flex flex-wrap noselect px-0">
     <article-preview 
       v-for="entity in entries"
       :key="entity.sys.id"
       :entity="entity"
-      class="mr-5 mb-3"
+      class="mr-auto mb-3"
     />
   </v-container>
 </template>

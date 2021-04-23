@@ -76,14 +76,6 @@ export default {
     updatedAt: function () {
       return this.entry?.sys.updatedAt;
     }
-  },
-  methods: {
-    moveBack: function () {
-      this.$router.go(-1)
-    },
-    viewTaggedPosts: function (tag) {
-      this.$router.push(encodeURI(`/tags/${tag}`))
-    }
   }
 }
 </script>

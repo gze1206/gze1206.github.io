@@ -88,7 +88,8 @@ module.exports = {
     }
   },
   plugins: [
-    '~/plugins/contentful'
+    '~/plugins/contentful',
+    '~/plugins/mixin'
   ],
   generate: {
     routes () {

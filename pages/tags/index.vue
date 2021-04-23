@@ -3,7 +3,7 @@
     <v-chip
       v-for="tag in tags"
       :key="tag"
-      class="mr-5 mb-3"
+      class="mr-auto mb-3"
       @click="viewTaggedPosts(tag)"
     >
       <v-icon left>label</v-icon>
@@ -31,11 +31,6 @@ export default {
           ...res.items.flatMap(iter => iter.fields.tags)
         ])
       ].filter(iter => iter)
-    }
-  },
-  methods: {
-    viewTaggedPosts: function (tag) {
-      this.$router.push(encodeURI(`/tags/${tag}`))
     }
   }
 }

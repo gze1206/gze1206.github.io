@@ -54,31 +54,27 @@ export default {
 
 .wrapper {
   background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
-  background-size: 1800% 1800%;
+  background-size: 600% 600%;
 
-  -webkit-animation: rainbow 9s ease infinite;
-  -z-animation: rainbow 9s ease infinite;
-  -o-animation: rainbow 9s ease infinite;
-    animation: rainbow 9s ease infinite;}
+  -webkit-animation: rainbow 6s linear infinite alternate;
+  -z-animation: rainbow 6s linear infinite alternate;
+  -o-animation: rainbow 6s linear infinite alternate;
+    animation: rainbow 6s linear infinite alternate;}
 
   @-webkit-keyframes rainbow {
-      0%{background-position:0% 82%}
-      50%{background-position:100% 19%}
-      100%{background-position:0% 82%}
+      0%{background-position:0% 0%}
+      100%{background-position:100% 100%}
   }
   @-moz-keyframes rainbow {
-      0%{background-position:0% 82%}
-      50%{background-position:100% 19%}
-      100%{background-position:0% 82%}
+      0%{background-position:0% 0%}
+      100%{background-position:100% 100%}
   }
   @-o-keyframes rainbow {
-      0%{background-position:0% 82%}
-      50%{background-position:100% 19%}
-      100%{background-position:0% 82%}
+      0%{background-position:0% 0%}
+      100%{background-position:100% 100%}
   }
   @keyframes rainbow { 
-      0%{background-position:0% 82%}
-      50%{background-position:100% 19%}
-      100%{background-position:0% 82%}
+      0%{background-position:0% 0%}
+      100%{background-position:100% 100%}
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <v-container fluid class="noselect">
     <v-row>
-      <v-btn plain outlined class="mb-3 mr-4" @click="moveBack">
+      <v-btn plain outlined class="mb-3 mr-4" to="/tags">
         <v-icon>arrow_back</v-icon>
         back to tags
       </v-btn>
@@ -9,12 +9,12 @@
         Tag : {{ tag }}
       </span>
     </v-row>
-    <v-row class="d-flex flex-wrap noselect">
+    <v-row class="d-flex flex-wrap noselect pt-3">
       <article-preview
         v-for="entity in entries"
         :key="entity.sys.id"
         :entity="entity"
-        class="mr-5 mb-3"
+        class="mr-auto mb-3"
       />
     </v-row>
   </v-container>
@@ -29,11 +29,6 @@ const client = createClient();
 
 export default {
   components: { articlePreview },
-  methods: {
-    moveBack: function () {
-      this.$router.push('/tags');
-    },
-  },
   async asyncData({ env, params }) {
     let res = await client.getEntries({
       'content_type': env.CTF_BLOG_POST_TYPE_ID,
