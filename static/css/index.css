@@ -2,11 +2,6 @@
     width: 100%;
 }
 
-.v-application code {
-    padding: 0!important;
-    background-color: transparent!important;
-}
-
 .noselect {
     -webkit-touch-callout: none;
     -webkit-user-select: none;

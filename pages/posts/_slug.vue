@@ -9,7 +9,7 @@
         <v-card-subtitle v-if="createdAt" class="post-date">Written at {{ createdAt | formatDate }}</v-card-subtitle>
         <v-card-subtitle v-if="updatedAt" class="post-date">Updated at {{ updatedAt | formatDate }}</v-card-subtitle>
         <v-divider class="mt-4"/>
-        <div class="ma-4" v-html="compiled" />
+        <div class="ma-4 md-content" v-html="compiled" />
         <div v-if="tags">
           <v-divider/>
           <v-card-actions>
@@ -25,22 +25,29 @@
 </template>
 
 <script>
-import marked from 'marked';
+import mdit from 'markdown-it';
 import hljs from 'highlight.js';
 import { createClient } from '~/plugins/contentful.js';
 import filters from '~/filters';
 
 const client = createClient();
+const md = mdit({
+  breaks: true,
+  langPrefix: '',
+  highlight: function (str, lang) {
+    if (lang && hljs.getLanguage(lang)) {
+      try {
+        return '<pre class="hljs"><code>' +
+               hljs.highlight(str, { language: lang, ignoreIllegals: true }).value +
+               '</code></pre>';
+      } catch (__) {}
+    }
+
+    return '<pre class="hljs"><code>' + md.utils.escapeHtml(str) + '</code></pre>';
+  }
+})
 
 export default {
-  created: function() {
-    marked.setOptions({
-      langPrefix: '',
-      highlight: (code, lang) => {
-        return hljs.highlightAuto(code, [lang]).value
-      }
-    });
-  },
   async asyncData({ env, params }) {
     // console.log(env.CTF_BLOG_POST_TYPE_ID, params.slug)
     let res = await client.getEntries({
@@ -62,7 +69,7 @@ export default {
   },
   computed: {
     compiled: function () {
-      return marked(this.entry?.fields.body ?? '#EMPTY')
+      return md.render(this.entry?.fields.body ?? '# EMPTY')
     },
     title: function () {
       return this.entry?.fields.title ?? 'AAAA'
@@ -86,5 +93,9 @@ export default {
   margin-bottom: 0;
   padding-top: 0;
   padding-bottom: 0;
+}
+
+.md-content {
+  overflow-x: scroll;
 }
 </style>
