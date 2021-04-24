@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/tags", {data:[{tags:["Vue.js","Nuxt","Contentful","Github","Dev","Web","Github Actions","Github Pages"]}],fetch:{},mutations:void 0});
