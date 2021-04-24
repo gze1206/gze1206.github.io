@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/tags", {data:[{tags:["%20","???","&&&","test","skgjsdkl;gjdflkjgsdl","image","asdasdasd"]}],fetch:{},mutations:void 0});
