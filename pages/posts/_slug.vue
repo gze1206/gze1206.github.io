@@ -25,7 +25,7 @@
         <div id="lv-container" data-id="city" data-uid="MTAyMC81MzMzOC8yOTgxMg==">
           <script type="text/javascript">
             (function(d, s) {
-                const dup = d.querySelector('iframe[title="livere-comment"]');
+                const dup = d.querySelector('iframe[title=livere-comment]');
                 if (dup) return;
 
                 var j, e = d.getElementsByTagName(s)[0];
