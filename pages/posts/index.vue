@@ -4,7 +4,7 @@
       v-for="entity in entries"
       :key="entity.sys.id"
       :entity="entity"
-      class="mr-auto mb-3"
+      class="mr-2 mb-3"
     />
   </v-container>
 </template>

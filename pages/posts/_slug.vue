@@ -12,8 +12,8 @@
         <div class="ma-4 md-content" v-html="compiled" />
         <div v-if="tags">
           <v-divider/>
-          <v-card-actions>
-            <v-chip v-for="tag in tags" :key="tag" class="mr-2" @click="viewTaggedPosts(tag)">
+          <v-card-actions class="d-flex flex-wrap">
+            <v-chip v-for="tag in tags" :key="tag" class="mr-2 mb-3" @click="viewTaggedPosts(tag)">
                 <v-icon left>label</v-icon>
                 {{ tag }}
             </v-chip>

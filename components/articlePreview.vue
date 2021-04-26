@@ -7,11 +7,11 @@
     <v-card-subtitle v-else>
       {{ updatedAt | formatDate }}
     </v-card-subtitle>
-    <v-card-actions v-if="entity.fields.tags">
+    <v-card-actions v-if="entity.fields.tags" class="d-flex flex-wrap">
       <v-chip
         v-for="tag in entity.fields.tags"
         :key="tag"
-        class="mr-2"
+        class="mr-2 mb-3"
         @click.stop="viewTaggedPosts(tag)"
       >
         <v-icon left>label</v-icon>
