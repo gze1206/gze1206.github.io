@@ -40,7 +40,7 @@ module.exports = {
       {
         defer: true,
         hid: 'adsense',
-        src: '/js/adsense'
+        src: '/js/adsense.js'
       }
     ],
     link: [
