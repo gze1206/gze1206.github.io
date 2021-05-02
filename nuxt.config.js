@@ -36,6 +36,13 @@ module.exports = {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'gze1206 personal blog' }
     ],
+    script: [
+      {
+        defer: true,
+        hid: 'adsense',
+        src: '/js/adsense'
+      }
+    ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: '/css/index.css' },
