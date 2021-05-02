@@ -74,6 +74,9 @@ module.exports = {
   modules: [
     '@nuxtjs/vuetify',
   ],
+  buildModules: [
+    '@nuxtjs/google-analytics'
+  ],
   css: [
     { src: '~/node_modules/highlight.js/styles/atom-one-dark.css', lang: 'css' }
   ],
@@ -121,6 +124,9 @@ module.exports = {
   },
   server: {
 	  host: '0.0.0.0'
+  },
+  googleAnalytics: {
+    id: 'G-NGDRT81TN6'
   },
   /*
   ** Define environment variables being available
