@@ -123,7 +123,7 @@ export default {
   overflow-x: scroll;
 }
 
-#lv-container {
+#lv-container, #taboola-livere {
   padding-left: 1em;
   padding-right: 1em;
   background-color: white;
