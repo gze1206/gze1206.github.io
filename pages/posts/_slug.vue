@@ -122,7 +122,9 @@ export default {
 .md-content {
   overflow-x: scroll;
 }
+</style>
 
+<style>
 #lv-container, #taboola-livere {
   padding-left: 1em;
   padding-right: 1em;
