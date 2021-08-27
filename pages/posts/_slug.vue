@@ -69,11 +69,10 @@ const md = mdit({
 
     return '<pre class="hljs"><code>' + md.utils.escapeHtml(str) + '</code></pre>';
   }
-})
+});
 
 export default {
   async asyncData({ env, params }) {
-    // console.log(env.CTF_BLOG_POST_TYPE_ID, params.slug)
     let res = await client.getEntries({
       'content_type': env.CTF_BLOG_POST_TYPE_ID,
       'fields.slug': params.slug
