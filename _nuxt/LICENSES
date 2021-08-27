@@ -1,3 +1,21 @@
+/*! https://mths.be/punycode v1.4.1 by @mathias */
+
+
+//! Copyright (c) JS Foundation and other contributors
+
+//! github.com/moment/moment-timezone
+
+//! license : MIT
+
+//! moment-timezone.js
+
+//! moment.js
+
+//! moment.js locale configuration
+
+//! version : 0.5.33
+
+
 /*!
  * vue-client-only v0.0.0-semantic-release
  * (c) 2021-present egoist <0x142857@gmail.com>
@@ -22,21 +40,3 @@
  * (c) 2014-2021 Evan You
  * Released under the MIT License.
  */
-
-
-//! Copyright (c) JS Foundation and other contributors
-
-//! github.com/moment/moment-timezone
-
-//! license : MIT
-
-//! moment-timezone.js
-
-//! moment.js
-
-//! moment.js locale configuration
-
-//! version : 0.5.33
-
-
-/*! https://mths.be/punycode v1.4.1 by @mathias */
