@@ -1,0 +1,1 @@
+window.location.href = 'http://blog.gze1206.net/';
